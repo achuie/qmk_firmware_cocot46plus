@@ -275,7 +275,7 @@ void oled_write_layer_state(void) {
             oled_write_P(PSTR("Raise"), false);
             break;
         case 3:
-            oled_write_P(PSTR("Direct"), false);
+            oled_write_P(PSTR("Dir  "), false);
             break;
         case 4:
             oled_write_P(PSTR("Mouse"), false);
