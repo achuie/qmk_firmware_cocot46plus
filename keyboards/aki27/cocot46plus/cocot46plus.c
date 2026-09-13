@@ -152,7 +152,7 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
 bool process_record_kb(uint16_t keycode, keyrecord_t* record) {
     // xprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
-    
+
     if (!process_record_user(keycode, record)) {
         return false;
     }
@@ -256,7 +256,7 @@ void oled_write_layer_state(void) {
     int cpi = cpi_array[cocot_config.cpi_idx];
     int scroll_div = scrl_div_array[cocot_config.scrl_div];
     int angle = angle_array[cocot_config.rotation_angle];
-    
+
     char buf1[5];
     char buf2[3];
     char buf3[4];
@@ -275,10 +275,10 @@ void oled_write_layer_state(void) {
             oled_write_P(PSTR("Raise"), false);
             break;
         case 3:
-            oled_write_P(PSTR("Mouse"), false);
+            oled_write_P(PSTR("Direct"), false);
             break;
         case 4:
-            oled_write_P(PSTR("L4   "), false);
+            oled_write_P(PSTR("Mouse"), false);
             break;
         case 5:
             oled_write_P(PSTR("L5   "), false);
