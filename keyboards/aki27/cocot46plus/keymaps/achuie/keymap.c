@@ -53,7 +53,7 @@ enum layer_number {
     _LOWER = 1,
     _RAISE = 2,
     _DIRECT = 3,
-    _TRACKBALL = 4
+    _ADJUST = 4
 };
 
 
@@ -106,13 +106,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                                  _______, _______,  _______, XXXXXXX, XXXXXXX, XXXXXXX
                                                             //`--------------'  `--------------'
     ),
-  [_TRACKBALL] = LAYOUT(
+  [_ADJUST] = LAYOUT(
   //|-------------------------------------------------------|                                   |-------------------------------------------------------|
-      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_TOG,                                       SCRL_TO,  CPI_SW, SCRL_SW, ROT_L15, ROT_R15, XXXXXXX,
+      XXXXXXX, XXXXXXX, SCRL_SW, CPI_SW,  XXXXXXX, RGB_TOG,                                      G(A(KC_1)), G(A(KC_2)), G(A(KC_3)), G(A(KC_4)), G(A(KC_5)), XXXXXXX,
   //|-------------------------------------------------------|                                   |-------------------------------------------------------|
-      XXXXXXX, XXXXXXX, RGB_VAI, RGB_SAI, RGB_HUI, RGB_MOD,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      _______, ROT_R15, RGB_VAI, RGB_SAI, RGB_HUI, RGB_MOD,                                      G(A(KC_6)), G(A(KC_7)), G(A(KC_8)), G(A(KC_9)), G(A(KC_0)), _______,
   //|-------------------------------------------------------|                                   |-------------------------------------------------------|
-      XXXXXXX, XXXXXXX, RGB_VAD, RGB_SAD, RGB_HUD,RGB_RMOD,                                       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      _______, ROT_L15, RGB_VAD, RGB_SAD, RGB_HUD,RGB_RMOD,                                       G(C(A(KC_LEFT))), G(C(A(KC_RIGHT))), XXXXXXX, XXXXXXX, XXXXXXX, _______,
   //|-------------------------------------------------------|                                   |-------------------------------------------------------|
                         _______, _______, _______,  _______,   _______,                _______, _______, _______, _______, _______,
                                                                  _______,  _______,   _______, XXXXXXX, XXXXXXX, XXXXXXX
@@ -146,7 +146,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         rgblight_sethsv_range(HSV_YELLOW, 0, 2);
         cocot_set_scroll_mode(false);
         break;
-    case _TRACKBALL:
+    case _ADJUST:
         rgblight_sethsv_range(HSV_BLUE, 0, 2);
         cocot_set_scroll_mode(false);
         break;
